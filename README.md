@@ -1,4 +1,4 @@
-# CIFAR-10 Classification Using CNN
+# CIFAR-10 Classification Using CNN (Optimised using Keras Tuner)
 
 ## Objective
 The objective of this project is to effectively classify images into 10 different classes: ["aeroplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"] using Convolutional Neural Networks (CNNs).

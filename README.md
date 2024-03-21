@@ -1,36 +1,39 @@
+# CIFAR-10 Classification Using CNN
 
-# CIFAR---10-Classification-Using-CNN
+## Objective
+The objective of this project is to effectively classify images into 10 different classes: ["aeroplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"] using Convolutional Neural Networks (CNNs).
 
-- **Objective**:
-  - The objective here is to effectively classify 10 outcomes : ["aeroplane","automobile","bird","cat","deer","dog","frog","horse","ship","truck"]
-    
-- **Dataset**:
-  - We utilized the standard CIFAR - 10 dataset that has 50000 train images and 10000 test images 
-  - All images were scaled to the size of 32 x 32 pixels.
-  - The dataset was shuffled to prevent the model from memorizing and encourage understanding.
+## Dataset
+- The CIFAR-10 dataset consists of 50,000 training images and 10,000 test images.
+- All images are resized to 32 x 32 pixels.
+- The dataset is shuffled to prevent overfitting and encourage generalization.
 
-- **Model Selection**:
-  - Due to the dataset's size and the aim for maximum accuracy, **Convolutional Neural Networks (CNNs)** were chosen over Artificial Neural Networks (ANNs).
-  - Various models were trained, considering different configurations of dense layers, layer sizes, and convolutional layers.
-  - Dense layer options: [0, 1, 2]
-  - Layer sizes options: [32, 64, 128]
-  - Convolutional layer options: [1, 2, 3]
-  - 27 models were tested, and their performance was evaluated using **Tensorboard**.
+## Model Selection
+- CNNs are chosen over ANNs due to the dataset size and the aim for maximum accuracy.
+- Various models are trained with different configurations of dense layers, layer sizes, and convolutional layers.
+- Hyperparameter tuning is performed to optimize the model.
 
-- **Best Model**:
-  - The model with **2 dense layers with 3000 and 1000 units respectively , a conv layer size of 64, and 3 convolutional layers** emerged as the best fit for our dataset.
+## Best Model
+Using tuner search and random searching, the parameters of the best model are determined to be:
+- Number of convolutional layers: 3
+- Number of convolutional filters: 96
+- Number of dense layers: 2
+- Number of dense units: 3000
 
-- **Convolutional Network**:
-  1. We constructed a sequential model with the following components:
-     - Convolutional layer with a kernel size of (3,3) and 64 filters.
-     - Max pooling layer to improve feature mapping and reduce data size.
-  2. The output layer utilized a **linear** activation function with 10 unit for classification and then later **softmax** was used to predict the probabilities of each outcomes and then pick the best one with argmax and predict that outcomes
+![Best Model Parameters](https://github.com/AniruthSuresh/CIFAR---10-Classification/assets/137063103/9e8ffddc-688b-4a48-9bdf-7de28d1d0cec)
 
-- **Performance**:
-  - The model achieved the following metrics:
-  - accuracy: 88 
-  - loss: 0.3430
-  - val_accuracy: 65.88
-  - val_loss: 1.2737
+## Convolutional Network
+1. Sequential model components:
+   - Convolutional layer with a kernel size of (3,3) and 64 filters.
+   - Max pooling layer to improve feature mapping and reduce data size.
+2. Output layer:
+   - Utilizes a linear activation function with 10 units for classification.
+   - Softmax activation function is used to predict the probabilities of each class.
 
-This implementation demonstrates effective classification of cats and dogs using Convolutional Neural Networks.
+## Performance
+The model achieves the following metrics on the test data:
+- Accuracy: 67.77%
+- Loss: 0.998
+
+This implementation demonstrates effective image classification using CNNs on the CIFAR-10 dataset.
+
